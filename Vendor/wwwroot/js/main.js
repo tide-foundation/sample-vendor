@@ -24,11 +24,27 @@
 
 'use strict';
 
+import {AddTideButton} from "https://cdn.jsdelivr.net/gh/tide-foundation/heimdall@main/heimdall.js";
+
 var welcomeMsg = 'Welcome to H4x.2 | Find the secret| AND WIN!|';	
 var varSize = 13;
 
 var S = {
   init: function () {
+    const config = {
+      vendorPublic: "bGKZOFa1LUJzgHY1HOVNQdO9iFTuBkB6EvpJiYqSDBs=",
+      vendorAuthRedirectUrl: "http://localhost:5231/tideauth",
+      vendorUrlSignature: "Fi/fvZmmwsK2IJfXC9y2Oh0UIabnSBJlS5XYlsSYAxf9OEOK543D6nM5b5Xs2h2GFl93AzJ7yrU1u7fzk4/EDQ==",
+      homeORKUrl: "http://localhost:1002"
+    }
+
+    const button = AddTideButton(config);
+    button.className = "vendor-form-btn";
+    button.innerHTML = "LOGIN";
+    let btnDiv = document.getElementById("tide-btn-div");
+    btnDiv.appendChild(button);
+
+
     var action = window.location.href,
         i = action.indexOf('?a=');
 
@@ -274,10 +290,8 @@ S.UI = (function () {
         reset(true);
       }
     });
- 
-    button.addEventListener('click', function () {
-      window.location.href = "https://h4x22ork1.azurewebsites.net/index.html"; //Change the url
-    });
+    
+
   }
 
   return {
