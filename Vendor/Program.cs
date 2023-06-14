@@ -10,14 +10,14 @@ builder.Services.AddControllersWithViews()
 
 builder.Services.AddSession(options =>
 {
-    options.IdleTimeout = TimeSpan.FromSeconds(10); // add this
+    options.IdleTimeout = TimeSpan.FromSeconds(5); // add this
     options.Cookie.HttpOnly = true;
     options.Cookie.IsEssential = true;
 });
 
 builder.Services.Configure<VendorSDKOptions>(options =>
 {
-    options.RedirectUrl = "http://localhost:5231/home"; // add this
+    options.RedirectUrl = "http://localhost:5231/hello"; // add this
 });
 
 
