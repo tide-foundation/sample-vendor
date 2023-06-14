@@ -9,3 +9,5 @@ Things to do (as of 29/05/2023):
 - Integrate heimdall with this vendor
 - Figure out the flow and what this vendor will be able to do
 - Should there be a vendor C# SDK too?
+
+**All done on (14/06/2023)**
