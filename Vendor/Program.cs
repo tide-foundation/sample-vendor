@@ -1,4 +1,5 @@
-﻿using Vendor.Helpers;
+﻿using System.Numerics;
+using Vendor.Helpers;
 using Vendor.Services;
 using Vendor_SDK;
 
@@ -6,7 +7,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews()
-    .AddApplicationPart(typeof(Vendor_SDK.Controllers.TideAuthController).Assembly); // add this
+    .AddApplicationPart(typeof(Vendor_SDK.Controllers.TideController).Assembly); // add this
 
 builder.Services.AddSession(options =>
 {
@@ -18,6 +19,7 @@ builder.Services.AddSession(options =>
 builder.Services.Configure<VendorSDKOptions>(options =>
 {
     options.RedirectUrl = "http://localhost:5231/hello"; // add this
+    options.PrivateKey = BigInteger.Parse("1234");
 });
 
 

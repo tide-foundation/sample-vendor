@@ -26,15 +26,14 @@
 
 import {AddTideButton} from "https://cdn.jsdelivr.net/gh/tide-foundation/heimdall@main/heimdall.js";
 
-var welcomeMsg = 'Welcome to H4x.2 | Find the secret| AND WIN!|';	
+var welcomeMsg = 'Welcome to H4x.2 | Secured by Tide|';	
 var varSize = 13;
 
 var S = {
   init: function () {
     const config = {
-      vendorPublic: "bGKZOFa1LUJzgHY1HOVNQdO9iFTuBkB6EvpJiYqSDBs=",
-      vendorAuthRedirectUrl: "http://localhost:5231/tideauth",
-      vendorUrlSignature: "Fi/fvZmmwsK2IJfXC9y2Oh0UIabnSBJlS5XYlsSYAxf9OEOK543D6nM5b5Xs2h2GFl93AzJ7yrU1u7fzk4/EDQ==",
+      vendorPublic: "s1tI3O64Z1zRKt6ddYOd+qxMd518BzhV5l0K7QBje8g=",
+      vendorUrlSignature: "Wh4Lhi0CREd1Feg362PAdqO6FMmmRQu0WodDuBB66oL3e0N60Xqk5O3fy63GwM+aNZGon9KC7iCGtSU1jkOdAg==",
       homeORKUrl: "http://localhost:1002"
     }
 
