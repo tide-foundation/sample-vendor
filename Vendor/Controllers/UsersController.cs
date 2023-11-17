@@ -51,18 +51,29 @@ public class UsersController : ControllerBase
     public IActionResult GetCode(string id)
     {
         var user = _userService.GetById(id);
-        return Ok(user.Secret);
+        return Ok(user.PublicKey);
     }
 
     [HttpPost]
-    public async Task<IActionResult> Create(User user)
+    public async Task<IActionResult> SignUp(User user)
     {
         try
         {
-            // check user exists in simulator first
-            string simulatorURL = _config.GetValue<string>("Endpoints:Simulator:Api");
-            if (!await _userService.UserExists(user.UID, simulatorURL)) throw new InvalidOperationException("User does not exist in simulator");
+            _userService.Create(user);
+            return Ok(new { message = "Entry created" });
 
+        }
+        catch (Exception ex)
+        {
+            return BadRequest(ex.Message);
+        }
+    }
+
+    [HttpPost]
+    public async Task<IActionResult> SignIn(string id, string auth)
+    {
+        try
+        {
             _userService.Create(user);
             return Ok(new { message = "Entry created" });
 

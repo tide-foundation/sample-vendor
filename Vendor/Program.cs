@@ -5,10 +5,6 @@ using Vendor_SDK;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-builder.Services.AddControllersWithViews()
-    .AddApplicationPart(typeof(Vendor_SDK.Controllers.TideController).Assembly); // add this
-
 builder.Services.AddSession(options =>
 {
     options.IdleTimeout = TimeSpan.FromSeconds(5); // add this

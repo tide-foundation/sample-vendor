@@ -22,7 +22,5 @@ public class User
 {
     [Key]
     public string UID { get; set; }
-    public string Secret { get; set; }
-
-
+    public string PublicKey { get; set; }
 }
